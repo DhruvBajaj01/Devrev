@@ -94,7 +94,7 @@ flight
 - User 
 - Admin
 
-#### User Use Cases
+#### User Use Cases(features)
 - Login
 - Sign up
 - Searching for flights based on date and time
@@ -103,8 +103,17 @@ seat count is 60)
 - My Booking -&gt; to list out all the bookings made by that user
 - Logout
 
-#### Admin Use Cases
+#### Admin Use Cases(freatures)
 - Login (Seperate login for Admin)
 - Add Flights
 - Remove flights
 - View all the booking based on flight number and time
+
+## Tech stack to build Backend
+
+- Django (Backend-Development)
+- sqlite (Database)
+- HTML  (Rendering UI)
+- Postman (API testing)
+
+
