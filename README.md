@@ -1,3 +1,40 @@
+# Django Backend app for Flight Bookings
+
+## Steps to follow to run app
+
+
+#### Installation :
+
+- Fork the Repository (top-right) or clone it with :
+- Use the cmd to the folder where you want to install app
+```
+$ git clone https://github.com/DhruvBajaj01/Devrev.git 
+```
+- From cmd navigate into the Project folder flight_booking :
+```
+$ cd flight_booking
+```
+
+#### Activating Virtual Environment :
+
+```
+$ venv\Scripts\activate
+```
+
+#### Install requirements :
+
+```
+$ pip install -r requirements.txt
+```
+- Once all the packages are installed, run the app using :
+
+#### Run the app:
+
+```
+$ python mange.py runserver
+```
+
+## Project Tree/ Directory Structure
 
 ```
 flight
