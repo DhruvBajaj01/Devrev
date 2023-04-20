@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Search Flights</h1>
+
+  <form method="post">
+    {% csrf_token %}
+    <div>
+      <label for="id_date">Date:</label>
+      <input type="date" id="id_date" name="date">
+    </div>
+    <div>
+      <label for="id_time">Time:</label>
+      <input type="time" id="id_time" name="time"> 
+    </div>
+    <br>
+    <button type="submit">Search</button>
+  </form>
+
+  {% if flights %}
+    <h2>Flights:</h2>
+    <ul>
+    {% for flight in flights %}
+      <li>
+        <a href="{% url 'book_flight' flight.id %}">{{ flight }}</a>
+        ({{ flight.date|date:"d M Y" }}, {{ flight.time|time:"H:i" }})
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  
+<br>
+  <a href="{% url 'logout' %}">Logout</a>
+{% endblock %}
