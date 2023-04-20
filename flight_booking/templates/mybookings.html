@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>My Bookings</h2>
+  {% if bookings %}
+    <ul>
+      {% for booking in bookings %}
+        <li>Flight: {{ booking.flight }}, Date: {{ booking.flight.date }}, Time: {{ booking.flight.time }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No bookings found.</p>
+  {% endif %}
+  <a href="{% url 'logout' %}">Logout</a>
+{% endblock %}
