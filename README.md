@@ -1,5 +1,13 @@
 # Django Backend app for Flight Bookings
 
+## Demo of Application:
+- Drive link [Link](https://drive.google.com/file/d/1QY6SYgLPStZfl7mG8qnWoNUHV9-20nmc/view?usp=sharing)
+
+## Hosted Application link:
+- Link to Hosted App - [Link](https://devrev-production.up.railway.app/)
+- You cannota access /admin without credentials
+
+
 ## Steps to follow to run app
 
 
