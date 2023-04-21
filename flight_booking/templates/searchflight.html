@@ -6,6 +6,24 @@
   <form method="post">
     {% csrf_token %}
     <div>
+      <label for="id_from_city">From:</label>
+      <select id="id_from_city" name="from_city">
+        <option value="Kanpur">Kanpur</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Ranchi">Ranchi</option>
+      </select>
+    </div>
+    <div>
+      <label for="id_to_city">To:</label>
+      <select id="id_to_city" name="to_city">
+        <option value="Chennai">Chennai</option>
+        <option value="Bangalore">Bangalore</option>
+        <option value="Hyderabad">Hyderabad</option>
+        <option value="Coimbatore">Coimbatore</option>
+      </select>
+    </div>
+    <div>
       <label for="id_date">Date:</label>
       <input type="date" id="id_date" name="date">
     </div>
@@ -28,7 +46,27 @@
     {% endfor %}
     </ul>
   {% endif %}
+
+  {% if not flights and request.method == 'POST' %}
+    <p>No flights are available for the selected criteria.</p>
+  {% endif %}
   
 <br>
   <a href="{% url 'logout' %}">Logout</a>
 {% endblock %}
+
+
+<script>
+  const fromToggle = document.getElementById('from_toggle');
+  const fromCitySelect = document.getElementById('from_city');
+  const toToggle = document.getElementById('to_toggle');
+  const toCitySelect = document.getElementById('to_city');
+
+  fromToggle.addEventListener('change', () => {
+    fromCitySelect.disabled = !fromToggle.checked;
+  });
+
+  toToggle.addEventListener('change', () => {
+    toCitySelect.disabled = !toToggle.checked;
+  });
+</script>

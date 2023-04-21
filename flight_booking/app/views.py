@@ -14,18 +14,29 @@ def home(request):
     return render(request, 'home.html', {'flights': flights})
 
 
+# @login_required
+# def search_flights(request):
+#     flights = Flight.objects.none() # initialize flights with an empty queryset
+#     if request.method == 'POST':
+#         date = request.POST.get('date')
+#         time = request.POST.get('time')
+#         flights = Flight.objects.filter(date=date, time=time)
+#     if not flights:
+#         message = "No flights available for the selected date and time."
+#     else:
+#         message = None
+#     return render(request, 'searchflight.html', {'flights': flights})
+
 @login_required
 def search_flights(request):
-    flights = Flight.objects.none() # initialize flights with an empty queryset
-    if request.method == 'POST':
-        date = request.POST.get('date')
-        time = request.POST.get('time')
-        flights = Flight.objects.filter(date=date, time=time)
-    if not flights:
-        message = "No flights available for the selected date and time."
-    else:
-        message = None
-    return render(request, 'searchflight.html', {'flights': flights})
+  flights = Flight.objects.none()
+  if request.method == 'POST':
+    from_city = request.POST.get('from_city')
+    to_city = request.POST.get('to_city')
+    date = request.POST.get('date')
+    time = request.POST.get('time')
+    flights = Flight.objects.filter(from_city=from_city, to_city=to_city, date=date, time=time)
+  return render(request, 'searchflight.html', {'flights': flights})
    
            
 

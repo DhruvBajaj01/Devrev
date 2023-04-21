@@ -7,6 +7,7 @@
   Hi {{ user.username }}!
   <p><a href="{% url 'search_flights' %}" class="btn btn-primary">Search Flights</a></p>
   <p><a href="{% url 'logout' %}">Log Out</a></p>
+  <p> <a href="{% url 'my_bookings' %}" class="btn btn-primary">View Your Bookings</a></p>
 {% else %}
   <p>Welcome the MyFlightApp. Please Log In to continue.</p>
   <a href="{% url 'login' %}">Log In</a> &nbsp&nbsp&nbsp&nbsp

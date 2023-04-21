@@ -6,6 +6,8 @@ class Flight(models.Model):
     date = models.DateField()
     time = models.TimeField()
     seats = models.IntegerField(default=60)
+    from_city = models.CharField(max_length=100, default='Chennai')
+    to_city = models.CharField(max_length=100, default='Kanpur')
 
     def __str__(self):
         return f'{self.number} - {self.date} - {self.time}'
