@@ -1,4 +1,4 @@
-# Django Backend app for Flight Bookings
+# Django Backend app for Flight Booking
 
 ## Demo of Application:
 - Drive link [Link](https://drive.google.com/file/d/1QY6SYgLPStZfl7mG8qnWoNUHV9-20nmc/view?usp=sharing)
